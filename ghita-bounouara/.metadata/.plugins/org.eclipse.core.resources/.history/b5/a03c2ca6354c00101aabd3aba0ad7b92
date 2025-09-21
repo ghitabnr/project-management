@@ -1,8 +1,0 @@
-package org.mql.spring.repositories;
-
-import org.mql.spring.models.Collaborator;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface ModuleRepository extends JpaRepository<Collaborator, Integer>{
-	public Collaborator findByFirstName(String name);
-}
