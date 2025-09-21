@@ -1,0 +1,52 @@
+package org.mql.spring;
+
+import java.util.List;
+
+import org.mql.spring.business.FormationServices;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class EntryPoint {
+	ApplicationContext context;
+	
+	public EntryPoint() {
+		loadContext();
+		exp01();
+	}
+	
+	public void loadContext() {
+		context = new ClassPathXmlApplicationContext("beans.xml");
+	}
+	
+	public void exp01() {
+		FormationServices service = context.getBean(FormationServices.class);
+		service.saveAllFormateurs();
+		service.saveAllFormations();
+		service.saveAllModules();
+		
+		List<Position> positions = service.getAllPositions();
+		System.out.println("Positions");
+		for (Position position : positions) {
+			System.out.println(position);
+		}
+		System.out.println("Projects");
+		List<Project> projects = service.getAllProjects();
+		for (Project project : projects) {
+			System.out.println(project);
+		}
+		System.out.println("Collaborators");
+		List<Collaborator> collaborators = service.getAllCollaborators();
+		for (Collaborator collaborator : collaborators) {
+			System.out.println(collaborator);
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		new EntryPoint();
+	}
+	
+	
+}

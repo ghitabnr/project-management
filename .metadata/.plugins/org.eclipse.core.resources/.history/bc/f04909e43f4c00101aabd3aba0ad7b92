@@ -1,0 +1,66 @@
+package org.mql.spring.business;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.mql.spring.models.Formateur;
+import org.mql.spring.models.Formation;
+import org.mql.spring.models.Module;
+import org.mql.spring.repositories.FormateurRepository;
+import org.mql.spring.repositories.FormationRepository;
+import org.mql.spring.repositories.ModuleRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class FormationsServicesDefault implements FormationsServices{
+	@Autowired
+	private ModuleRepository moduleRepository;
+	@Autowired
+	private FormationRepository formationRepository;
+	@Autowired
+	private FormateurRepository formateurRepository;
+	
+
+	@Override
+	public List<Module> getAllModules() {
+		return moduleRepository.findAll();
+	}
+
+	@Override
+	public List<Formateur> getAllFormateurs() {
+		return formateurRepository.findAll();
+	}
+
+	@Override
+	public List<Formation> getAllFormations() {
+		return formationRepository.findAll();
+	}
+
+	@Override
+	public List<Module> getModuleByKeyword(String keyword) {
+		return moduleRepository.findByKeyword(keyword);
+	}
+
+	@Override
+	public List<Formateur> getFormateurByName(String name) {
+		// TODO Auto-generated method stub
+		return formateurRepository.findByName(name);
+	}
+
+
+
+	@Override
+	public Module getModuleById(int id) {
+		Optional<Module> module = moduleRepository.findById(id);
+		if(module.isPresent()) return module.get();
+		return null;
+	}
+
+	@Override
+	public List<Module> findModulesByFormateurId(int formateurId) {
+		// TODO Auto-generated method stub
+		return moduleRepository.findModulesByFormateurId(formateurId);
+	}
+
+
+
+}

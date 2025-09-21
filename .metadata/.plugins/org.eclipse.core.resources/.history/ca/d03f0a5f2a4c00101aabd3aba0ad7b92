@@ -1,0 +1,11 @@
+package org.mql.spring.dao;
+
+import java.util.List;
+
+public interface Formateur {
+	
+		public List<Formateur> selectAll();
+		public boolean insert(Formateur c);
+	
+
+}

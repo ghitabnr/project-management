@@ -1,0 +1,49 @@
+package org.mql.spring.models;
+
+public class Module {
+	private int id;
+	private String titre;
+	
+	public Module() {
+	}
+	
+	public Module(int id, String titre) {
+		super();
+		this.id = id;
+		this.titre = titre;
+	}
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+	public String getTitre() {
+		return titre;
+	}
+
+
+
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Module [id=" + id + ", titre=" + titre + "]";
+	}
+	
+	
+
+}

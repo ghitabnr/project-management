@@ -1,0 +1,26 @@
+package org.mql.spring.dao;
+
+import java.util.List;
+
+import org.mql.spring.models.Module;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository("moduleDaoImpl")
+public class ModuleDaoImpl implements ModuleDao{
+	@Autowired
+	private List<Module> modules;
+
+	@Override
+	public List<Module> selectAll() {
+		// TODO Auto-generated method stub
+		return modules;
+	}
+
+	@Override
+	public boolean insert(Module m) {
+		// TODO Auto-generated method stub
+		return modules.add(m);
+	}
+
+}

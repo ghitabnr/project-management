@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:component-scan base-package="org.mql.spring"/>
+	<context:annotation-config/>
+	
+	<bean id="M1" class="org.mql.spring.models.Module">
+		<property name="id" value="1" ></property>
+		<property name="title" value="Spring MVC" />
+	</bean>
+	
+	<bean id="M2" class="org.mql.spring.models.Module">
+		<property name="id" value="1" ></property>
+		<property name="title" value="Spring Data JPA" />
+	</bean>
+	
+	<bean id="M3" class="org.mql.spring.models.Module">
+		<property name="id" value="1" ></property>
+		<property name="title" value="Spring MVC" />
+	</bean>
+	
+	<bean id="M4" class="org.mql.spring.models.Module">
+		<property name="id" value="1" ></property>
+		<property name="title" value="Spring MVC" />
+	</bean>
+	
+	<bean id="M5" class="org.mql.spring.models.Module">
+		<property name="id" value="1" ></property>
+		<property name="title" value="Spring MVC" />
+	</bean>
+	
+	<bean id="M6" class="org.mql.spring.models.Module">
+		<property name="id" value="1" ></property>
+		<property name="title" value="Spring MVC" />
+	</bean>
+	
+	<bean id="M7" class="org.mql.spring.models.Module">
+		<property name="id" value="1" ></property>
+		<property name="title" value="Spring MVC" />
+	</bean>
+	
+	<bean id="M8" class="org.mql.spring.models.Module">
+		<property name="id" value="1" ></property>
+		<property name="title" value="Spring MVC" />
+	</bean>
+	
+	<bean id="M9" class="org.mql.spring.models.Module">
+		<property name="id" value="1" ></property>
+		<property name="title" value="Spring MVC" />
+	</bean>
+	
+	<bean id="M10" class="org.mql.spring.models.Module">
+		<property name="id" value="1" ></property>
+		<property name="title" value="Spring MVC" />
+	</bean>
+
+
+
+</beans>

@@ -1,0 +1,20 @@
+package org.mql.spring.dao;
+
+import java.util.List;
+
+import org.mql.spring.models.Formation;
+
+public class FormationDaoImpl implements FormationDao{
+	private List<Formation> formations;
+
+	@Override
+	public List<Formation> selectAll() {
+		return formations;
+	}
+
+	@Override
+	public boolean insert(Formation fn) {
+		return formations.add(fn);
+	}
+
+}

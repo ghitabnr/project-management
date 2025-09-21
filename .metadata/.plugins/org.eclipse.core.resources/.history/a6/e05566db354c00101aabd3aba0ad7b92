@@ -1,0 +1,25 @@
+package org.mql.spring.business;
+
+import java.util.List;
+import org.mql.spring.models.Module;
+import org.mql.spring.models.Formation;
+import org.mql.spring.models.Formateur;
+
+
+public interface FormationServices {
+
+		public List<Module> getAllModules();
+
+		public List<Formateur> getAllFormateurs();
+
+		public List<Formation> getAllFormations();
+
+		public Boolean saveAllModules();
+
+		public Boolean saveAllFormations();
+
+		public Boolean saveAllFormateurs();
+
+	
+
+}

@@ -1,0 +1,54 @@
+package org.mql.spring.controllers;
+
+import org.mql.spring.business.FormationsServices;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("formations")
+@PropertySource("formations.properties")
+public class FormationController {
+	@Autowired
+	private FormationsServices service;
+	
+	@Value("${formations.list.template}")
+	private String formationstemplate;
+	
+	@Value("${formateurs.list.template}")
+	private String formateurstemplate;
+	
+	@Value("${modules.list.template}")
+	private String modulestemplate;
+
+	public FormationController() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	
+	@GetMapping("formations-list")
+	public String formationsList(Model model) {
+		model.addAttribute("formations", service.getAllFormations());
+		return formationstemplate;
+	}
+	
+	@GetMapping("formateurs-list")
+	public String formateursList(Model model) {
+		model.addAttribute("formateurs", service.getAllFormateurs());
+		return formateurstemplate;
+	}
+	
+	@GetMapping("modules-list")
+	public String modulesList(Model model) {
+		model.addAttribute("modules", service.getAllModules());
+		return modulestemplate;
+	}
+	
+	
+}
+

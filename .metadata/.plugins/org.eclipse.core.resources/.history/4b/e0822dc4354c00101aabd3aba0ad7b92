@@ -1,0 +1,11 @@
+package org.mql.spring.repositories;
+
+import java.util.List;
+
+import org.mql.spring.models.Formateur;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+public interface FormateurRepository extends JpaRepository<Formateur, Integer>{
+	
+}

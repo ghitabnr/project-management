@@ -1,0 +1,75 @@
+package org.mql.spring.models;
+
+import java.util.List;
+import java.util.Vector;
+
+public class Formation {
+	private String id;
+	private List<Module> modules;
+	private String date;
+	private long duration;
+	private Formateur formateur;
+	
+	public Formation() {
+		modules = new Vector<Module>();
+	}
+
+	public Formation(String id, List<Module> modules, String date, long duration, Formateur formateur) {
+		super();
+		this.id = id;
+		this.modules = modules;
+		this.date = date;
+		this.duration = duration;
+		this.formateur = formateur;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public List<Module> getModules() {
+		return modules;
+	}
+
+	public void setModules(List<Module> modules) {
+		this.modules = modules;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public long getDuration() {
+		return duration;
+	}
+
+	public void setDuration(long duration) {
+		this.duration = duration;
+	}
+
+	public Formateur getFormateur() {
+		return formateur;
+	}
+
+	public void setFormateur(Formateur formateur) {
+		this.formateur = formateur;
+	}
+
+	@Override
+	public String toString() {
+		return "Formation [id=" + id + ", modules=" + modules + ", date=" + date + ", duration=" + duration
+				+ ", formateur=" + formateur + "]";
+	}
+
+	
+	
+	
+}

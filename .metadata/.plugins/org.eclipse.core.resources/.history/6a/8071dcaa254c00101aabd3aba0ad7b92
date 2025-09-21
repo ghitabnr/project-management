@@ -1,0 +1,85 @@
+package org.mql.spring.models;
+
+import java.util.List;
+import java.util.Vector;
+
+public class Formation {
+	private String id;
+	private String title;
+	private String description;
+	private long duration;
+	private List<Module> modules;
+	private Formateur formateur;
+	
+	public Formation() {
+		modules = new Vector<Module>();
+	}
+
+	public Formation(String id, String title, String description, List<Module> modules, Trainer trainer) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.modules = modules;
+		this.trainer = trainer;
+		for (Module module : modules) {
+			this.duration += module.getNbSession(); 
+		}
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public long getDuration() {
+		return duration;
+	}
+
+	public void setDuration(long duration) {
+		this.duration = duration;
+	}
+
+	public List<Module> getModules() {
+		return modules;
+	}
+
+	public void setModules(List<Module> modules) {
+		this.modules = modules;
+	}
+	
+	public void addModule(Module m) {
+		this.modules.add(m);
+	}
+
+	public Trainer getTrainer() {
+		return trainer;
+	}
+
+	public void setTrainer(Trainer trainer) {
+		this.trainer = trainer;
+	}
+	
+	
+	
+	
+}

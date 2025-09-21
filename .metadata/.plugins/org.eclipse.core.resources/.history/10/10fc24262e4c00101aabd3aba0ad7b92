@@ -1,0 +1,85 @@
+package org.mql.spring.dao;
+
+import java.util.List;
+import java.util.Vector;
+
+import org.mql.spring.models.Formation;
+import org.mql.spring.models.Formateur;
+import org.mql.spring.models.Module;
+
+public class ORM {
+	    
+	    public ORM() {
+	        // TODO Auto-generated constructor stub
+	    }
+	    
+	   
+	    public static Formateur getFormateur(String... row) {
+	        return new Formateur(
+	            getInt(row[0]),  // id
+	            row[1],         // name
+	            getInt(row[2]), // tel
+	            row[3]          // email
+	        );
+	    }
+	    
+	    public static List<Formateur> getFormateurs(String data[][]){
+	        List<Formateur> formateurs = new Vector<Formateur>();
+	        for (int i=1; i<data.length;i++) {
+	            formateurs.add(getFormateur(data[i]));
+	        }
+	        return formateurs;
+	    }
+	    
+	    // New methods for Module
+	    public static Module getModule(String... row) {
+	        return new Module(
+	            getInt(row[0]),  // id
+	            row[1]          // titre
+	        );
+	    }
+	    
+	    public static List<Module> getModules(String data[][]){
+	        List<Module> modules = new Vector<Module>();
+	        for (int i=1; i<data.length;i++) {
+	            modules.add(getModule(data[i]));
+	        }
+	        return modules;
+	    }
+	    
+	    // New methods for Formation
+	    public static Formation getFormation(String... row) {
+	        // Assuming:
+	        // row[0] = id (String)
+	        // row[1] = module id (int)
+	        // row[2] = date (String)
+	        // row[3] = duree (int)
+	        // row[4] = formateur id (int)
+	        // Note: This is a simplified version. In a real application, you might need to 
+	        // fetch the complete Module and Formateur objects from a database or other source
+	        
+	        // Create a temporary Module with just the ID
+	        Module module = new Module(getInt(row[1]), null);
+	        
+	        // Create a temporary Formateur with just the ID
+	        Formateur formateur = new Formateur(getInt(row[4]), null, -1, null);
+	        
+	        return new Formation(
+	            row[0],         // id
+	            module,        // module (partial object)
+	            row[2],        // date
+	            getInt(row[3]), // duree
+	            formateur      // formateur (partial object)
+	        );
+	    }
+	    
+	    public static List<Formation> getFormations(String data[][]){
+	        List<Formation> formations = new Vector<Formation>();
+	        for (int i=1; i<data.length;i++) {
+	            formations.add(getFormation(data[i]));
+	        }
+	        return formations;
+	    }
+	}
+	
+}

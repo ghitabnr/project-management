@@ -1,0 +1,8 @@
+package org.mql.spring.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.mql.spring.models.Module;
+
+public interface ModuleRepository extends JpaRepository<Module, Integer>{
+
+}

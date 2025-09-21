@@ -1,0 +1,142 @@
+package org.mql.spring.business;
+
+import java.util.List;
+
+import org.mql.spring.dao.FormateurDao;
+import org.mql.spring.dao.FormationDao;
+import org.mql.spring.dao.ModuleDao;
+import org.mql.spring.models.Formateur;
+import org.mql.spring.models.Formation;
+import org.mql.spring.models.Module;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class FormationServicesDefault implements FormationServices{
+	
+	@Autowired
+	private ModuleDao ModuleDaoJdbc;
+	@Autowired
+	private FormationDao FormationDaoJdbc;
+	@Autowired
+	private FormateurDao FormateurDaoJdbc;
+	
+	@Autowired
+	private ModuleDao ModuleDaoImpl;
+	@Autowired
+	private FormationDao FormationDaoImpl;
+	@Autowired
+	private FormateurDao FormateurDaoImpl;
+
+	@Override
+	public List<Module> getAllModules() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Formateur> getAllFormateurs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Formation> getAllFormations() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean saveAllModules() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean saveAllFormations() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean saveAllFormateurs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+}
+/*package org.mql.spring.services;
+
+import java.util.List;
+
+import org.mql.spring.dao.*;
+import org.mql.spring.models.Collaborator;
+import org.mql.spring.models.Position;
+import org.mql.spring.models.Project;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CompanyServiceDefault implements CompanyService{
+	
+	@Autowired
+	private PositionDao positionDaoJdbc;
+	@Autowired
+	private ProjectDao projectDaoJdbc;
+	@Autowired
+	private CollboratorDao collaboratorDaoJdbc;
+	
+	@Autowired
+	private PositionDao positionDaoMemory;
+	@Autowired
+	private ProjectDao projectDaoMemory;
+	@Autowired
+	private CollboratorDao collaboratorDaoMemory;
+	
+	
+
+	@Override
+	public List<Project> getAllProjects() {
+		return projectDaoJdbc.selectAll();
+	}
+
+	@Override
+	public List<Position> getAllPositions() {
+		return positionDaoJdbc.selectAll();
+	}
+
+	@Override
+	public List<Collaborator> getAllCollaborators() {
+		return collaboratorDaoJdbc.selectAll();
+	}
+
+	@Override
+	public Boolean saveAllProjects() {
+		List<Project> projects = projectDaoMemory.selectAll();
+		for (Project project : projects) {
+			projectDaoJdbc.insert(project);
+		}
+		return true;
+	}
+
+	@Override
+	public Boolean saveAllPositions() {
+		List<Position> positions = positionDaoMemory.selectAll();
+		for (Position position : positions) {
+			positionDaoJdbc.insert(position);
+		}
+		return true;
+	}
+
+	@Override
+	public Boolean saveAllCollaborators() {
+		List<Collaborator> collaborators = collaboratorDaoMemory.selectAll();
+		for (Collaborator collaborator : collaborators) {
+			collaboratorDaoJdbc.insert(collaborator);
+		}
+		return true;
+	}
+*/
+}

@@ -1,0 +1,17 @@
+package org.mql.spring.repositories;
+
+
+import java.util.List;
+
+import org.mql.spring.models.Formation;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+public interface FormationRepository extends JpaRepository<Formation, Integer>{
+	
+    @Query("SELECT f.module FROM Formation f WHERE f.formateur.id = :formateurId")
+    List<Module> findModulesByFormateurId(@Param("formateurId") int formateurId);
+	
+
+}

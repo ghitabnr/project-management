@@ -1,0 +1,11 @@
+package org.mql.spring.dao;
+
+import java.util.List;
+
+public interface Module {
+	
+	
+	public List<ModuleDao> selectAll();
+	public boolean insert(ModuleDao m);
+
+}

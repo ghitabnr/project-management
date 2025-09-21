@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:component-scan base-package="org.mql.spring"/>
+	<context:annotation-config/>
+	
+	<bean id="M1" class="org.mql.spring.models.Module">
+		<property name="id" value="1" ></property>
+		<property name="titre" value="Spring MVC" />
+	</bean>
+	
+	<bean id="M2" class="org.mql.spring.models.Module">
+		<property name="id" value="2" ></property>
+		<property name="titre" value="Spring Data JPA" />
+	</bean>
+	
+	<bean id="M3" class="org.mql.spring.models.Module">
+		<property name="id" value="3" ></property>
+		<property name="titre" value="JPA Properties" />
+	</bean>
+	
+	<bean id="M4" class="org.mql.spring.models.Module">
+		<property name="id" value="4" ></property>
+		<property name="titre" value="Spring Security" />
+	</bean>
+	
+	<bean id="M5" class="org.mql.spring.models.Module">
+		<property name="id" value="5" ></property>
+		<property name="titre" value="Spring Boot Starter" />
+	</bean>
+	
+	<bean id="M6" class="org.mql.spring.models.Module">
+		<property name="id" value="6" ></property>
+		<property name="titre" value="Spring Boot Annotations" />
+	</bean>
+	
+	<bean id="M7" class="org.mql.spring.models.Module">
+		<property name="id" value="7" ></property>
+		<property name="titre" value="No Code Repositories" />
+	</bean>
+	
+	<bean id="M8" class="org.mql.spring.models.Module">
+		<property name="id" value="8" ></property>
+		<property name="titre" value="Generated Queries" />
+	</bean>
+	
+	<bean id="M9" class="org.mql.spring.models.Module">
+		<property name="id" value="9" ></property>
+		<property name="titre" value="Reduced Boilerplate Code" />
+	</bean>
+	
+	<bean id="M10" class="org.mql.spring.models.Module">
+		<property name="id" value="10" ></property>
+		<property name="titre" value="Spring Boot Rest API" />
+	</bean>
+
+	<bean id="Fr1" class="org.mql.spring.models.Formateur">
+		<property name="id" value="1" ></property>
+		<property name="name" value="Formateur 1" />
+		<property name="tel" value="1234567" />
+		<property name="email" value="formateur1@gmail.com" />
+	</bean>
+	
+	<bean id="Fr2" class="org.mql.spring.models.Formateur">
+		<property name="id" value="2" ></property>
+		<property name="name" value="Formateur 2" />
+		<property name="tel" value="7654321" />
+		<property name="email" value="formateur2@gmail.com" />
+	</bean>
+	
+	<bean id="Fn1" class="org.mql.spring.models.Formation">
+		<property name="id" value="1"></property>
+		<property name="module" ref="M1"></property>
+		<property name="date" value="11/09/2025"></property>
+		<property name="duree" value="10"></property>
+		<property name="formateur" ref="Fr1"></property>
+	</bean>
+	
+	<bean id="Fn2" class="org.mql.spring.models.Formation">
+		<property name="id" value="2"></property>
+		<property name="module" ref="M2"></property>
+		<property name="date" value="26/09/2025"></property>
+		<property name="duree" value="90"></property>
+		<property name="formateur" ref="Fr1"></property>
+	</bean>
+	
+	<bean id="Fn3" class="org.mql.spring.models.Formation">
+		<property name="id" value="3"></property>
+		<property name="module" ref="M3"></property>
+		<property name="date" value="1/11/2026"></property>
+		<property name="duree" value="60"></property>
+		<property name="formateur" ref="Fr1"></property>
+	</bean>
+	
+	<bean id="Fn4" class="org.mql.spring.models.Formation">
+		<property name="id" value="4"></property>
+		<property name="module" ref="M4"></property>
+		<property name="date" value="05/02/2026"></property>
+		<property name="duree" value="55"></property>
+		<property name="formateur" ref="Fr1"></property>
+	</bean>
+	
+	<bean id="Fn5" class="org.mql.spring.models.Formation">
+		<property name="id" value="5"></property>
+		<property name="module" ref="M5"></property>
+		<property name="date" value="28/06/2025"></property>
+		<property name="duree" value="20"></property>
+		<property name="formateur" ref="Fr1"></property>
+	</bean>
+	
+	<bean id="Fn6" class="org.mql.spring.models.Formation">
+		<property name="id" value="6"></property>
+		<property name="module" ref="M6"></property>
+		<property name="date" value="3/04/2025"></property>
+		<property name="duree" value="30"></property>
+		<property name="formateur" ref="Fr2"></property>
+	</bean>
+	
+	<bean id="Fn7" class="org.mql.spring.models.Formation">
+		<property name="id" value="7"></property>
+		<property name="module" ref="M7"></property>
+		<property name="date" value="9/08/2025"></property>
+		<property name="duree" value="40"></property>
+		<property name="formateur" ref="Fr2"></property>
+	</bean>
+	
+	<bean id="Fn8" class="org.mql.spring.models.Formation">
+		<property name="id" value="8"></property>
+		<property name="module" ref="M8"></property>
+		<property name="date" value="4/12/2027"></property>
+		<property name="duree" value="100"></property>
+		<property name="formateur" ref="Fr2"></property>
+	</bean>
+	
+	<bean id="Fn9" class="org.mql.spring.models.Formation">
+		<property name="id" value="9"></property>
+		<property name="module" ref="M9"></property>
+		<property name="date" value="15/02/2027"></property>
+		<property name="duree" value="30"></property>
+		<property name="formateur" ref="Fr2"></property>
+	</bean>
+	
+	<bean id="Fn10" class="org.mql.spring.models.Formation">
+		<property name="id" value="10"></property>
+		<property name="module" ref="M10"></property>
+		<property name="date" value="22/02/2025"></property>
+		<property name="duree" value="70"></property>
+		<property name="formateur" ref="Fr2"></property>
+	</bean>
+	
+	<bean id="dataSource" class="org.mql.spring.jdbc.MySQLDataSource">
+			<property name="bridge" value="jdbc:mysql:" />
+		    <property name="driver" value="com.mysql.jdbc.Driver" />
+		    <property name="host" value="localhost" />
+		    <property name="user" value="root"/>
+		    <property name="password" value="" />
+		    <property name="source" value="projects" />        
+	</bean>
+	
+	<bean id="db" class="org.mql.spring.jdbc.Database">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+</beans>

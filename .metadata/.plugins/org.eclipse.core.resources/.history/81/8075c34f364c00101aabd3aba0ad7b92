@@ -1,0 +1,47 @@
+package org.mql.spring.business;
+
+import java.util.List;
+
+import org.mql.spring.models.Formateur;
+import org.mql.spring.models.Formation;
+import org.mql.spring.models.Module;
+
+public class FormationsServicesDefault implements FormationsServices{
+
+	@Override
+	public List<Module> getAllModules() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Formateur> getAllFormateurs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Formation> getAllFormations() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean saveAllModules() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean saveAllFormations() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean saveAllFormateurs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

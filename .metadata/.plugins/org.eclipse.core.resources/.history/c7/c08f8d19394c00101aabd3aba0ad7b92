@@ -1,0 +1,108 @@
+package org.mql.spring.controllers;
+
+import org.mql.spring.business.FormationsServices;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("formation")
+@PropertySource("formations.properties")
+public class FormationController {
+	@Autowired
+	private FormationsServices service;
+	
+	@Value("${formations.list.template}")
+	private String template;
+
+	public FormationController() {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	@GetMapping("formations-list")
+	public String getAllProjects(@RequestParam(required = false) String technology,Model model) {
+		List<Project> projects = new Vector<Project>();
+		if(technology==null) {
+			projects = service.getAllProjects();
+			model.addAttribute("projects", projects);
+		} else {
+			projects = service.getProjectsByTechnology(technology);
+			model.addAttribute("projects-technologies", projects);
+		}
+		return template;
+	}
+	
+	@GetMapping("formations-list")
+	public String formationsList(Model model) {
+		model.addAttribute("formations", service.getAllFormations());
+		return template;
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * @Controller
+@RequestMapping("company")
+@PropertySource("projecs.properties")
+public class ProjectController {
+	@Autowired
+	private CompanyService service;
+	
+	@Value("${projects.list.template}")
+	private String template;
+
+	public ProjectController() {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	@GetMapping("projects-list")
+	public String getAllProjects(@RequestParam(required = false) String technology,Model model) {
+		List<Project> projects = new Vector<Project>();
+		if(technology==null) {
+			projects = service.getAllProjects();
+			model.addAttribute("projects", projects);
+		} else {
+			projects = service.getProjectsByTechnology(technology);
+			model.addAttribute("projects-technologies", projects);
+		}
+		return template;
+	}
+ * 
+ */

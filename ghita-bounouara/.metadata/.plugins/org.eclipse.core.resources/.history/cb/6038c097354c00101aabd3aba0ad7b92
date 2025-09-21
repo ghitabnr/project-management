@@ -1,0 +1,13 @@
+package org.mql.spring.repositories;
+
+import java.util.List;
+
+import org.mql.spring.models.Project;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+public interface FormateurRepository extends JpaRepository<Project, Integer>{
+	
+	@Query("SELECT p FROM Project p WHERE p.technologies LIKE %:technology%")
+	public List<Project> findByTechnology(String technology);
+}
